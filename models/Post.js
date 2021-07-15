@@ -35,4 +35,6 @@ Post.init(
         underscored: true,
         modelName: 'post',
       }
-)
+);
+
+module.exports = Post;
