@@ -1,3 +1,4 @@
+// I feel like although the majority of this is is the world of right, I might need to start over
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
@@ -9,7 +10,7 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: username,
+                    attributes: ['username'],
                 }
             ],
         });
@@ -32,8 +33,11 @@ router.get('/post/:id', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: username,
-                }
+                    attributes: ["username"],
+                },
+                {
+                    model: Comment
+                },
             ],
         });
 
@@ -58,7 +62,6 @@ router.get('/profile', withAuth, async (req, res) => {
         });
 
         const user = userData.get({ plain: true });
-
         res.render('profile', {
             ...user,
             logged_in: true
@@ -67,6 +70,9 @@ router.get('/profile', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+// POST profile
+// ===============
 
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
