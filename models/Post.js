@@ -18,7 +18,7 @@ Post.init(
         },
         body: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         post_id: {
             type: DataTypes.INTEGER,
