@@ -6,7 +6,7 @@ const withAuth = require('../utils/auth');
 // get all posts
 router.get('/', async (req, res) => {
     try {
-        const postData = await Post.findall({
+        const postData = await Post.findAll({
             include: [
                 {
                     model: User,
@@ -28,6 +28,7 @@ router.get('/', async (req, res) => {
 
 // get post by ID
 router.get('/post/:id', async (req, res) => {
+    console.log(req.params.id);
     try {
         const postData = await Post.findByPk(req.params.id, {
             include: [
@@ -41,7 +42,7 @@ router.get('/post/:id', async (req, res) => {
             ],
         });
 
-        const posts = postData.map((post) => post.get({ plain: true }));
+        const posts = postData.get({ plain: true });
 
         res.render('post', {
             ...posts,
@@ -52,7 +53,7 @@ router.get('/post/:id', async (req, res) => {
     }
 });
 
-// profile page
+// profile page - this works
 router.get('/profile', withAuth, async (req, res) => {
     try {
        

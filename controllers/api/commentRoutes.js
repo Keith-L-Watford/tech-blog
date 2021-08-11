@@ -29,7 +29,7 @@ router.delete('/:id', withAuth, async (req, res) => {
             return;
         }
 
-        res.status(200).json(cpmment);
+        res.status(200).json(comment);
     } catch (err) {
         res.status(500).json(err);
     }
