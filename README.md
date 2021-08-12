@@ -9,7 +9,9 @@ A user would go to the website and be able to signup/login. Afterwards, they wou
 Actual Behavior:
 The front end isnt appropiately connected to the backend.
 
-UPDATE: Aug 11th, finally got the front end to serve up. There are still some issues and bugs however, now users can create an account and view the seeded the data.
+UPDATE #1: Aug 11th, finally got the front end to serve up. There are still some issues and bugs however, now users can create an account and view the seeded the data.
+
+Update #2: Aug 12th, Logout is working!
 
 ## Table of Contents
 - [Installation](#installation)
