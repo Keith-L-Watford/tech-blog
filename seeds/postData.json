@@ -1,13 +1,12 @@
 [
     {
-      "id": 1,
       "title": "Let's Go Mongo!",
       "content": "MongoDB > MySQL"
   
     },
     {
-      "id": 2,
       "title": "JavaScript 101",
       "content": "1. JavaScript is not Java."
+  
     }
   ]
